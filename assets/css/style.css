@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* font-family: 'Biryani',
+sans-serif;
+font-family: 'Cuprum',
+sans-serif;
+font-family: 'Source Code Pro',
+monospace; */
+
+body {
+  font-family: 'Biryani', sans-serif;
+  background-image: url(../images/pexels-brett-sayles-1431822.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.container {
+  padding: 20px 70px;
+  color: white;
+
+}
+
+.current-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} 

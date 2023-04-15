@@ -7,6 +7,7 @@ var timeZone = document.getElementById('time-zone');
 var countryEl = document.getElementById('country');
 var weatherForecastEl = document.getElementById('weather-forecast');
 var currentTempEl = document.getElementById('current-temp');
+var APIkey = "16d07975cebab1a166b549c8cdd345da";
 
 // function to show current time
 function displayTime() {
@@ -25,11 +26,36 @@ displayDate();
 setInterval(displayDate, 24 * 60 * 60 * 1000);
 
 getWeatherData();
+
 function getWeatherData() {
 
-  var { APIKey } = "16d07975cebab1a166b549c8cdd345da";
+  navigator.geolocation.getCurrentPosition((success) => {
+    // console.log(success);
+    // var latitude = data.coord.lat;
+    // var longitude = data.coord.lon;
+    var {latitude, longitude} = success.coords;
 
-  fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=${5}&appid=${APIkey}`);
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+
+        showWeatherData(data);
+      })
+  })
+};
+
+function showWeatherData(data) {
 
 
 }
+
+
+
+
+
+
+
+

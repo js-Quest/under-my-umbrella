@@ -31,3 +31,79 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
 } 
+
+.date-container {
+
+}
+
+.time {
+  font-size: 4rem;
+}
+
+#am-pm {
+  font-size: 3rem;
+  margin-left: .5rem;
+}
+
+.date {
+  font-size: 1.7rem;
+}
+
+.place-container {
+  text-align: end;
+}
+
+.time-zone {
+  font-size: 1.5rem;
+}
+
+.country {
+  font-size: 1rem;
+}
+
+.current-info .others {
+  display: flex;
+  flex-direction: column;
+  background: rgba(24,24,27,0.4);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 10px 0;
+  border: 1px solid whitesmoke;
+}
+
+.current-info .others .weather-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future-forecast {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  background: rgba(24, 24, 27, 0.4);
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  bottom: 0;
+}
+
+.future-forecast .today {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.future-forecast .today .day {
+  padding: 5px 15px;
+  background: rgb(72, 72, 72);
+  border-radius: 15px;
+}
+
+.future-forecast .today .temp {
+  font-size: 1.5rem;
+}
+
+.weather-forecast {
+  display: flex;
+}

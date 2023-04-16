@@ -139,14 +139,29 @@ body {
   padding: 1rem;
 }
 
-.weather-forecast .weather-forecast-item .day {
-  padding: .2rem .6rem;
+.day {
+  padding: .3rem .6rem;
   background: var(--grey);
   border-radius: 15px;
   text-align: center;
 }
 
-.temp {}
+#submitBtn {
+  border-radius: 15px;
+  background-color: var(--grey);
+}
+
+#button {
+  border-radius: 15px;
+  background: rgba(24, 24, 27, 0.4);
+  width: 100%;
+  display: block;
+  padding: .3rem;
+  color: white;
+  margin: .1rem;
+  border-color: rgb(206, 206, 211);
+}
+
 
 
 @media only screen and (max-width: 730px) {

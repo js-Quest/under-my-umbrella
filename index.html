@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  
+
   <div class="container">
 
     <div class="current-info">
@@ -34,6 +34,10 @@
 
         <div class="others" id="current-weather-items">
           <div class="weather-item">
+            <div>Location</div>
+            <div id="location">CITY_NAME</div>
+          </div>
+          <div class="weather-item">
             <div>Conditions</div>
             <div id="current-condition">____CONDITION</div>
           </div>
@@ -43,7 +47,7 @@
           </div>
           <div class="weather-item">
             <div>Humidity</div>
-            <div  id="current-humidity">____%</div>
+            <div id="current-humidity">____%</div>
           </div>
           <div class="weather-item">
             <div>Wind Speed</div>
@@ -61,9 +65,7 @@
     <div>
       <section class="searchbar">
         <div class="mb-3">
-          <form>
-            <input type="text" class="form-control" placeholder="Search City Name Here">
-          </form>
+          <input type="text" id="input" class="form-control" placeholder="Search City Here">
         </div>
         <div class="d-grid gap-2">
           <button id="submitBtn" class="btn btn-primary" type="button">Search</button>
@@ -77,14 +79,14 @@
       <div id="icon-current"></div>
       <div class="other">
         <div class="day">TODAY</div>
-        <div  id="current-day" class="temp">Day: °F</div>
+        <div id="current-day" class="temp">Day: °F</div>
         <div id="current-night" class="temp">Night: °F</div>
       </div>
     </div>
-  
+
     <div class="weather-forecast" id="weather-forecast">
       <div class="weather-forecast-item">
-        <div class="day">someDay</div>
+        <div class="day" id="first-day">someDay</div>
         <div id="icon-one"></div>
         <div id="day-one">Day: °F</div>
         <div id="night-one">Night: °F</div>
@@ -92,7 +94,7 @@
         <div id="windspeed-one">windspeed</div>
       </div>
       <div class="weather-forecast-item">
-        <div class="day">someDay</div>
+        <div class="day" id="second-day">someDay</div>
         <div id="icon-two"></div>
         <div id="day-two">Day: °F</div>
         <div id="night-two">Night: °F</div>
@@ -100,7 +102,7 @@
         <div id="windspeed-two">windspeed</div>
       </div>
       <div class="weather-forecast-item">
-        <div class="day">someDay</div>
+        <div class="day" id="third-day">someDay</div>
         <div id="icon-three"></div>
         <div id="day-three">Day: °F</div>
         <div id="night-three">Night: °F</div>
@@ -108,7 +110,7 @@
         <div id="windspeed-three">windspeed</div>
       </div>
       <div class="weather-forecast-item">
-        <div class="day">someDay</div>
+        <div class="day" id="fourth-day">someDay</div>
         <div id="icon-four"></div>
         <div id="day-four">Day: °F</div>
         <div id="night-four">Night: °F</div>
@@ -116,7 +118,7 @@
         <div id="windspeed-four">windspeed</div>
       </div>
       <div class="weather-forecast-item">
-        <div class="day">someDay</div>
+        <div class="day" id="fifth-day">someDay</div>
         <div id="icon-five"></div>
         <div id="day-five">Day: °F</div>
         <div id="night-five">Night: °F</div>
@@ -124,8 +126,8 @@
         <div id="windspeed-five">windspeed</div>
       </div>
     </div>
-  
-    
+
+
   </div>
 
   <script src="assets/js/script.js"></script>

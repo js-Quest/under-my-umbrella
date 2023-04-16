@@ -21,6 +21,8 @@ Visit the deployed site by clicking on this link: https://js-quest.github.io/und
 
 [Weather-Up Forecast.webm](https://user-images.githubusercontent.com/128349503/232349932-a6b57112-3cf8-4c46-a8d0-e2ad3035fc79.webm)
 
+You can open the Chrome DevTools by pressing Command+Option+I (macOS) or Control+Shift+I (Windows) to check out the console, storage, and code.  Watch what happens in the console when you submit a city search!
+
 
 ## Acknowledgements
 
@@ -37,3 +39,6 @@ Visit the deployed site by clicking on this link: https://js-quest.github.io/und
 
  - [Asish George] (https://www.youtube.com/watch?v=6trGQWzg2AI)
 
+## License
+
+MIT

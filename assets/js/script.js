@@ -25,12 +25,12 @@ function displayDate() {
 displayDate();
 setInterval(displayDate, 24 * 60 * 60 * 1000);
 
-// functions for form inputs
 
 
+// array of cities
 var cities = JSON.parse(localStorage.getItem("cities")) || [];
 
-
+// function to save input to local storage
 function saveCity() {
   localStorage.setItem("cities", JSON.stringify(cities));
 };
@@ -38,14 +38,19 @@ function saveCity() {
 
 
 
-
+// event listener for cit input
 var submitBtnEl = document.getElementById('submitBtn');
 submitBtnEl.addEventListener('click', function (event) {
   event.preventDefault();
-
-  cities.reverse();
+  
   var inputEl = document.getElementById('input');
   var city = inputEl.value.trim();
+  if (!city) {
+    alert('please input a city name');
+    return;
+  }
+
+  cities.reverse();
   if (!cities.includes(city)) {
     cities.push(city);
     saveCity();
@@ -55,7 +60,7 @@ submitBtnEl.addEventListener('click', function (event) {
 });
 
 
-// function to display cities
+// function to display saved cities
 function displayCities() {
   var limit;
   if (cities.length < 5) {
@@ -67,23 +72,20 @@ function displayCities() {
   for (var i = 0; i < limit; i++) {
     var savedCityBtn = document.createElement('button');
     savedCityBtn.setAttribute("id", "button");
+    // savedCityBtn.setAttribute("value", i);
     viewedCitiesEl.appendChild(savedCityBtn);
     savedCityBtn.textContent = cities[i];
+    savedCityBtn.addEventListener('click', function () {
+      getCityCoords(this.textContent);
+    });
   }
-
-  for ( var i = 0; i < limit; i++) {
-    savedCityBtn.addEventListener('click', function(event) {
-      event.preventDefault();
-
-
-    })
-  }
-}
+};
 
 
 
 
 
+// function to get coordinates of city
 function getCityCoords(city) {
   coordQueryUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${APIkey}`;
   fetch(coordQueryUrl, {
@@ -93,15 +95,24 @@ function getCityCoords(city) {
   })
 
     .then(function (response) {
+      if (!response.ok) {
+        throw response.json();
+      }
       return response.json();
     })
     .then(function (data) {
       console.log(data);
+
+    // if (!data) {
+    //   alert("no results found, please try again");
+    // } else {
       getWeatherData(data[0].lat, data[0].lon);
     })
+    
 
-}
+};
 
+// function to get weather data based on coordinates of input city
 function getWeatherData(latitude, longitude) {
 
   queryUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
@@ -122,7 +133,7 @@ function getWeatherData(latitude, longitude) {
     })
 };
 
-
+// function to display data on app
 function showWeatherData(data) {
   if (data !== null) {
 
@@ -136,7 +147,6 @@ function showWeatherData(data) {
     var iconCurrentEl = document.getElementById('icon-current');
     var location = document.getElementById('location');
 
-
     currentConditionEl.innerHTML = data.list[0].weather[0].description;
     currentTemperatureEl.innerHTML = data.list[0].main.temp + '°F';
     currentHumidityEl.innerHTML = data.list[0].main.humidity + '%';
@@ -145,15 +155,12 @@ function showWeatherData(data) {
     currentNightEl.innerHTML = 'Night: ' + data.list[2].main.temp + '°F';
     location.innerHTML = data.city.name + ',  ' + data.city.country;
 
-
     // populate weather icon
     iconCurrentEl.textContent = "";
     var iconCurrent = data.list[0].weather[0].icon;
     var iconImg = document.createElement('img');
     iconImg.src = "http://openweathermap.org/img/wn/" + iconCurrent + "@4x.png";
     iconCurrentEl.appendChild(iconImg);
-
-
 
     // day 1 temp high, temp low, humidity, windspeed
     var dayOneHumidityEl = document.getElementById('humidity-one');
@@ -287,10 +294,7 @@ function showWeatherData(data) {
     };
     fifthDay();
     setInterval(fifthDay, 1000);
-
   }
-
-
 };
 
 

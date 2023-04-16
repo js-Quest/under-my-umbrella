@@ -1,5 +1,6 @@
 :root {
   --grey: rgb(72, 72, 72);
+  --lightgrey: rgb(181, 178, 178);
 }
 
 * {
@@ -16,7 +17,7 @@ font-family: 'Source Code Pro',
 monospace; */
 
 body {
-  font-family: 'Biryani', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   background-image: url(../images/pexels-brett-sayles-1431822.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -58,6 +59,7 @@ body {
 
 .date {
   font-size: 1.7rem;
+  padding-top: .5rem;
 }
 
 .place-container {
@@ -79,7 +81,7 @@ body {
   padding: 1rem;
   border-radius: 10px;
   margin: 10px 0;
-  border: 1px solid whitesmoke;
+  border: 1px solid var(--lightgrey);
 }
 
 .current-info .others .weather-item {
@@ -119,7 +121,7 @@ body {
 }
 
 .today {
-  border: 1px solid white;
+  border: 1px solid var(--lightgrey);
   border-radius: 10px;
   padding: 1rem;
 }
@@ -134,7 +136,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 .3rem;
-  border: 1px solid white;
+  border: 1px solid var(--lightgrey);
   border-radius: 10px;
   padding: 1rem;
 }

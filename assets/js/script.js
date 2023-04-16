@@ -91,7 +91,7 @@ function displayCities() {
 
 // function to get coordinates of city
 function getCityCoords(city) {
-  coordQueryUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${APIkey}`;
+  coordQueryUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${APIkey}`;
   fetch(coordQueryUrl, {
     method: 'GET',
     credentials: 'same-origin',

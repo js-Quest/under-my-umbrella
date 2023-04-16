@@ -22,23 +22,29 @@ body {
   background-repeat: no-repeat;
   overflow: hidden;
   height: 100vh;
+  display: flex;
 }
 
 .container {
-  padding: 20px 70px;
+  padding: 20px 5px;
   color: white;
+  display: flex;
 }
 
 .searchbar {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
+  flex: 0 0 20%;
+  width: 100%;
+  margin-right: 0;
 }
 
 .current-info {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  flex: 0 0 80%;
 }
 
 .time {

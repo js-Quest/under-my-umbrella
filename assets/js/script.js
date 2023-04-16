@@ -25,6 +25,51 @@ function displayDate() {
 displayDate();
 setInterval(displayDate, 24 * 60 * 60 * 1000);
 
+// functions for form inputs
+
+function loadCities() {
+  cities = JSON.parse(localStorage.getItem("cities")) || [];
+};
+
+function saveCity() {
+  localStorage.setItem("cities", JSON.stringify(cities));
+};
+
+// onload = function () {
+  loadCities();
+  if (cities[0]) {
+    getWeatherData(cities[cities.length - 1]);
+  };
+
+  displayCities();
+  var submitBtnEl = document.getElementById('submitBtn');
+  submitBtnEl.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    var input = document.getElementsByClassName('form-control');
+    var city = input.value.trim();
+    if (cities.includes(city)) {
+      cites.push(city);
+      saveCity();
+    };
+
+    displayCities();
+    getWeatherData(city);
+  });
+// };
+
+// function to display cities
+function displayCities() {
+  var limit;
+  if (cities.length <5) {
+    limit = cities.length
+  }else{
+    limit = 5;
+  }
+  var viewedCities = document.getElementById('viewed-cities');
+
+}
+
 getWeatherData();
 
 function getWeatherData() {
@@ -35,8 +80,12 @@ function getWeatherData() {
     // var longitude = data.coord.longitude;
     var { latitude, longitude } = success.coords;
 
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`, {
+    queryUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
 
+    fetch(queryUrl, {
+      method: 'GET', //GET is the default.
+      credentials: 'same-origin', // include, *same-origin, omit
+      redirect: 'follow', // manual, *follow, error
     })
 
       .then(function (response) {
@@ -52,7 +101,7 @@ function getWeatherData() {
 
 function showWeatherData(data) {
   if (data !== null) {
-    
+
     // current day
     var currentConditionEl = document.getElementById('current-condition');
     var currentTemperatureEl = document.getElementById('current-temperature');
@@ -164,10 +213,10 @@ function showWeatherData(data) {
     var iconFiveImg = document.createElement('img');
     iconFiveImg.src = "http://openweathermap.org/img/wn/" + iconFive + "@2x.png";
     iconFiveEl.appendChild(iconFiveImg);
-    
-    }
 
-  
+  }
+
+
 };
 
 

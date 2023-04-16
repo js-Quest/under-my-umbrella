@@ -14,7 +14,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Biryani:wght@300&family=Cuprum:wght@600&family=Source+Code+Pro&display=swap"
     rel="stylesheet">
-
+  <link rel="stylesheet" href="assets/css/reset.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
@@ -29,12 +29,8 @@
     <div class="current-info">
 
       <div class="date-container">
-        <div class="time" id="time">
-          TIME <span id="am-pm">PM</span>
-        </div>
-        <div class="date" id="date">
-          placeholder DATE
-        </div>
+        <div class="time" id="time"></div>
+        <div class="date" id="date"></div>
 
         <div class="others" id="current-weather-items">
           <div class="weather-item">
@@ -56,22 +52,23 @@
         </div>
       </div>
 
-      <div class="place-container">
+      <!-- <div class="place-container">
         <div class="time-zone" id="time-zone">CST (UTC-6)</div>
         <div class="country" id="country">COUNTRYname</div>
-      </div>
+      </div> -->
     </div>
 
     <div>
       <section class="searchbar">
         <div class="mb-3">
           <form>
-            <input type="text" class="form-control" id="input-city" placeholder="Search City Name Here">
+            <input type="text" class="form-control" placeholder="Search City Name Here">
           </form>
         </div>
         <div class="d-grid gap-2">
           <button id="submitBtn" class="btn btn-primary" type="button">Search</button>
         </div>
+        <div id="viewed-cities"></div>
       </section>
     </div>
   </div>

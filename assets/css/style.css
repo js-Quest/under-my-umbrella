@@ -36,8 +36,6 @@ body {
   flex-wrap: wrap;
 }
 
-.date-container {}
-
 .time {
   font-size: 4rem;
 }
@@ -88,6 +86,7 @@ body {
   width: 100%;
   padding: 1rem;
   bottom: 0;
+  font-size: .8rem;
 }
 
 .future-forecast .today {
@@ -106,6 +105,12 @@ body {
 .future-forecast .today .temp {
   font-size: 1.2rem;
   padding-top: .3rem;
+}
+
+.today {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 .weather-forecast {
@@ -130,16 +135,12 @@ body {
   text-align: center;
 }
 
-.temp {
-}
+.temp {}
 
 
 @media only screen and (max-width: 730px) {
-  
-  .container {
 
-  }
-  
+
   .future-forecast {
     justify-content: start;
     align-items: none;
@@ -153,4 +154,12 @@ body {
   .date-container .time {
     font-size: 2.5rem;
   }
-};
+}
+
+@media only screen and (max-width: 1000px) {
+  .future-forecast {
+    justify-content: start;
+    align-items: none;
+    overflow-y: scroll;
+  }
+}

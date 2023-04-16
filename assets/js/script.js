@@ -42,7 +42,7 @@ function saveCity() {
 var submitBtnEl = document.getElementById('submitBtn');
 submitBtnEl.addEventListener('click', function (event) {
   event.preventDefault();
-  
+
   var inputEl = document.getElementById('input');
   var city = inputEl.value.trim();
   if (!city) {
@@ -69,10 +69,14 @@ function displayCities() {
     limit = 5;
   }
   var viewedCitiesEl = document.getElementById('viewed-cities');
+
+  // clear list to get ready for population
+  viewedCitiesEl.textContent = "";
+
+  // for loop for populating previous search buttons
   for (var i = 0; i < limit; i++) {
     var savedCityBtn = document.createElement('button');
     savedCityBtn.setAttribute("id", "button");
-    // savedCityBtn.setAttribute("value", i);
     viewedCitiesEl.appendChild(savedCityBtn);
     savedCityBtn.textContent = cities[i];
     savedCityBtn.addEventListener('click', function () {
@@ -103,12 +107,12 @@ function getCityCoords(city) {
     .then(function (data) {
       console.log(data);
 
-    // if (!data) {
-    //   alert("no results found, please try again");
-    // } else {
+      // if (!data) {
+      //   alert("no results found, please try again");
+      // } else {
       getWeatherData(data[0].lat, data[0].lon);
     })
-    
+
 
 };
 

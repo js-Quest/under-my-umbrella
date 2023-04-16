@@ -89,6 +89,10 @@ body {
   justify-content: space-between;
 }
 
+.weather-item {
+  font-size: 1.3rem;
+}
+
 .future-forecast {
   display: flex;
   position: fixed;
@@ -139,6 +143,7 @@ body {
   border: 1px solid var(--lightgrey);
   border-radius: 10px;
   padding: 1rem;
+  font-size: 1rem;
 }
 
 .day {

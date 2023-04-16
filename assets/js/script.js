@@ -49,8 +49,12 @@ submitBtnEl.addEventListener('click', function (event) {
     alert('please input a city name');
     return;
   }
+  // clear input field after submission
+  inputEl.value = '';
 
+  // sort the array so more recent searches populate
   cities.reverse();
+
   if (!cities.includes(city)) {
     cities.push(city);
     saveCity();
@@ -100,16 +104,16 @@ function getCityCoords(city) {
 
     .then(function (response) {
       if (!response.ok) {
-        throw response.json();
+        throw new Error('Bad network response');
       }
       return response.json();
     })
     .then(function (data) {
       console.log(data);
+      if (data.length === 0) {
+        alert('this is not a recognized city name');
+      }
 
-      // if (!data) {
-      //   alert("no results found, please try again");
-      // } else {
       getWeatherData(data[0].lat, data[0].lon);
     })
 

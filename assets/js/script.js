@@ -31,7 +31,7 @@ function getWeatherData() {
 
   navigator.geolocation.getCurrentPosition((success) => {
     // console.log(success);
-    // var latitude = data.coord.latitufe;
+    // var latitude = data.coord.latitude;
     // var longitude = data.coord.longitude;
     var { latitude, longitude } = success.coords;
 
@@ -69,8 +69,11 @@ function showWeatherData(data) {
     currentDayEl.innerHTML = 'Day: ' + data.list[1].main.temp + '°F';
     currentNightEl.innerHTML = 'Night: ' + data.list[2].main.temp + '°F';
 
-    var icon = data.list[0].weather[0].icon;
-    iconCurrentEl.innerHTML = `src="http://openweathermap.org/img/w/${icon}.png"`
+    // populate weather icon
+    var iconCurrent = data.list[0].weather[0].icon;
+    var iconImg = document.createElement('img');
+    iconImg.src = "http://openweathermap.org/img/wn/" + iconCurrent + "@4x.png";
+    iconCurrentEl.appendChild(iconImg);
 
 
     // day 1 temp high, temp low, humidity, windspeed
@@ -84,6 +87,13 @@ function showWeatherData(data) {
     dayOneDayEl.innerHTML = 'Day: ' + data.list[07].main.temp + '°F';
     dayOneNightEl.innerHTML = 'Night: ' + data.list[04].main.temp + '°F';
 
+    var iconOneEl = document.getElementById('icon-one');
+    var iconOne = data.list[8].weather[0].icon;
+    var iconOneImg = document.createElement('img');
+    iconOneImg.src = "http://openweathermap.org/img/wn/" + iconOne + "@2x.png";
+    iconOneEl.appendChild(iconOneImg);
+
+
 
     // day 2
     var dayTwoHumidityEl = document.getElementById('humidity-two');
@@ -96,6 +106,13 @@ function showWeatherData(data) {
     dayTwoDayEl.innerHTML = 'Day: ' + data.list[15].main.temp + '°F';
     dayTwoNightEl.innerHTML = 'Night: ' + data.list[12].main.temp + '°F';
 
+    var iconTwoEl = document.getElementById('icon-two');
+    var iconTwo = data.list[16].weather[0].icon;
+    var iconTwoImg = document.createElement('img');
+    iconTwoImg.src = "http://openweathermap.org/img/wn/" + iconTwo + "@2x.png";
+    iconTwoEl.appendChild(iconTwoImg);
+
+
     // day 3
     var dayThreeHumidityEl = document.getElementById('humidity-three');
     var dayThreeWindspeedEl = document.getElementById('windspeed-three');
@@ -107,17 +124,28 @@ function showWeatherData(data) {
     dayThreeDayEl.innerHTML = 'Day: ' + data.list[15].main.temp + '°F';
     dayThreeNightEl.innerHTML = 'Night: ' + data.list[12].main.temp + '°F';
 
+    var iconThreeEl = document.getElementById('icon-three');
+    var iconThree = data.list[24].weather[0].icon;
+    var iconThreeImg = document.createElement('img');
+    iconThreeImg.src = "http://openweathermap.org/img/wn/" + iconThree + "@2x.png";
+    iconThreeEl.appendChild(iconThreeImg);
+
     // day 4
     var dayFourHumidityEl = document.getElementById('humidity-four');
     var dayFourWindspeedEl = document.getElementById('windspeed-four');
     var dayFourDayEl = document.getElementById('day-four');
     var dayFourNightEl = document.getElementById('night-four');
 
-
     dayFourHumidityEl.innerHTML = 'Humidity: ' + data.list[32].main.humidity + '%';
     dayFourWindspeedEl.innerHTML = 'Wind:' + data.list[32].wind.speed + 'mph';
     dayFourDayEl.innerHTML = 'Day: ' + data.list[31].main.temp + '°F';
     dayFourNightEl.innerHTML = 'Night: ' + data.list[28].main.temp + '°F';
+
+    var iconFourEl = document.getElementById('icon-four');
+    var iconFour = data.list[32].weather[0].icon;
+    var iconFourImg = document.createElement('img');
+    iconFourImg.src = "http://openweathermap.org/img/wn/" + iconFour + "@2x.png";
+    iconFourEl.appendChild(iconFourImg);
 
     // day 5
     var dayFiveHumidityEl = document.getElementById('humidity-five');
@@ -130,6 +158,12 @@ function showWeatherData(data) {
     dayFiveWindspeedEl.innerHTML = 'Wind:' + data.list[39].wind.speed + 'mph';
     dayFiveDayEl.innerHTML = 'Day: ' + data.list[38].main.temp + '°F';
     dayFiveNightEl.innerHTML = 'Night: ' + data.list[35].main.temp + '°F';
+
+    var iconFiveEl = document.getElementById('icon-five');
+    var iconFive = data.list[39].weather[0].icon;
+    var iconFiveImg = document.createElement('img');
+    iconFiveImg.src = "http://openweathermap.org/img/wn/" + iconFive + "@2x.png";
+    iconFiveEl.appendChild(iconFiveImg);
     
     }
 

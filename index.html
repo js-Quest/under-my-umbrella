@@ -23,6 +23,7 @@
 </head>
 
 <body>
+  
   <div class="container">
 
     <div class="current-info">
@@ -60,10 +61,23 @@
         <div class="country" id="country">COUNTRYname</div>
       </div>
     </div>
+
+    <div>
+      <section class="searchbar">
+        <div class="mb-3">
+          <form>
+            <input type="text" class="form-control" id="input-city" placeholder="Search City Name Here">
+          </form>
+        </div>
+        <div class="d-grid gap-2">
+          <button id="submitBtn" class="btn btn-primary" type="button">Search</button>
+        </div>
+      </section>
+    </div>
   </div>
   <div class="future-forecast">
     <div class="today" id="current-temp">
-      <img alt="weather-icon" id="icon-current">
+      <div id="icon-current"></div>
       <div class="other">
         <div class="day">TODAY</div>
         <div  id="current-day" class="temp">Day: °F</div>
@@ -74,7 +88,7 @@
     <div class="weather-forecast" id="weather-forecast">
       <div class="weather-forecast-item">
         <div class="day">someDay</div>
-        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weather-icon">
+        <div id="icon-one"></div>
         <div id="day-one">Day: °F</div>
         <div id="night-one">Night: °F</div>
         <div id="humidity-one">humidity</div>
@@ -82,7 +96,7 @@
       </div>
       <div class="weather-forecast-item">
         <div class="day">someDay</div>
-        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weather-icon">
+        <div id="icon-two"></div>
         <div id="day-two">Day: °F</div>
         <div id="night-two">Night: °F</div>
         <div id="humidity-two">humidity</div>
@@ -90,7 +104,7 @@
       </div>
       <div class="weather-forecast-item">
         <div class="day">someDay</div>
-        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weather-icon">
+        <div id="icon-three"></div>
         <div id="day-three">Day: °F</div>
         <div id="night-three">Night: °F</div>
         <div id="humidity-three">humidity</div>
@@ -98,7 +112,7 @@
       </div>
       <div class="weather-forecast-item">
         <div class="day">someDay</div>
-        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weather-icon">
+        <div id="icon-four"></div>
         <div id="day-four">Day: °F</div>
         <div id="night-four">Night: °F</div>
         <div id="humidity-four">humidity</div>
@@ -106,7 +120,7 @@
       </div>
       <div class="weather-forecast-item">
         <div class="day">someDay</div>
-        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="weather-icon">
+        <div id="icon-five"></div>
         <div id="day-five">Day: °F</div>
         <div id="night-five">Night: °F</div>
         <div id="humidity-five">humidity</div>

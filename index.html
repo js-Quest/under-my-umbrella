@@ -23,7 +23,7 @@
 
 <body>
 
-  <div class="container">
+  <section class="container">
 
     <div class="current-info">
 
@@ -54,80 +54,75 @@
           </div>
         </div>
       </div>
-
-      <!-- <div class="place-container">
-        <div class="time-zone" id="time-zone">CST (UTC-6)</div>
-        <div class="country" id="country">COUNTRYname</div>
-      </div> -->
     </div>
 
-    <div>
-      <section class="searchbar">
-        <div class="mb-3">
-          <input type="text" id="input" class="form-control" placeholder="Search City Here">
-        </div>
-        <div class="d-grid gap-2">
-          <button id="submitBtn" class="btn btn-primary" type="button">Search</button>
-        </div>
-        <div id="viewed-cities"></div>
-      </section>
-    </div>
-  </div>
-  <div class="future-forecast">
-    <div class="today" id="current-temp">
+
+    <section class="searchbar">
+      <div class="mb-3">
+        <input type="text" id="input" class="form-control" placeholder="Search City Here">
+      </div>
+      <div class="d-grid gap-2">
+        <button id="submitBtn" class="btn btn-primary" type="button">Search</button>
+      </div>
+      <div id="viewed-cities"></div>
+    </section>
+
+  </section>
+  <main class="future-forecast">
+    <section class="today" id="current-temp">
       <div id="icon-current"></div>
       <div class="other">
         <div class="day">TODAY</div>
         <div id="current-day" class="temp">Day: °F</div>
         <div id="current-night" class="temp">Night: °F</div>
       </div>
-    </div>
+    </section>
 
-    <div class="weather-forecast" id="weather-forecast">
-      <div class="weather-forecast-item">
+    <section class="weather-forecast" id="weather-forecast">
+      <article class="weather-forecast-item">
         <div class="day" id="first-day">someDay</div>
         <div id="icon-one"></div>
         <div id="day-one">Day: °F</div>
         <div id="night-one">Night: °F</div>
         <div id="humidity-one">humidity</div>
         <div id="windspeed-one">windspeed</div>
-      </div>
-      <div class="weather-forecast-item">
+      </article>
+      <article class="weather-forecast-item">
         <div class="day" id="second-day">someDay</div>
         <div id="icon-two"></div>
         <div id="day-two">Day: °F</div>
         <div id="night-two">Night: °F</div>
         <div id="humidity-two">humidity</div>
         <div id="windspeed-two">windspeed</div>
-      </div>
-      <div class="weather-forecast-item">
+      </article>
+      <article class="weather-forecast-item">
         <div class="day" id="third-day">someDay</div>
         <div id="icon-three"></div>
         <div id="day-three">Day: °F</div>
         <div id="night-three">Night: °F</div>
         <div id="humidity-three">humidity</div>
         <div id="windspeed-three">windspeed</div>
-      </div>
-      <div class="weather-forecast-item">
+      </article>
+      <article class="weather-forecast-item">
         <div class="day" id="fourth-day">someDay</div>
         <div id="icon-four"></div>
         <div id="day-four">Day: °F</div>
         <div id="night-four">Night: °F</div>
         <div id="humidity-four">humidity</div>
         <div id="windspeed-four">windspeed</div>
-      </div>
-      <div class="weather-forecast-item">
+      </article>
+      <article class="weather-forecast-item">
         <div class="day" id="fifth-day">someDay</div>
         <div id="icon-five"></div>
         <div id="day-five">Day: °F</div>
         <div id="night-five">Night: °F</div>
         <div id="humidity-five">humidity</div>
         <div id="windspeed-five">windspeed</div>
-      </div>
-    </div>
+      </article>
+    </section>
 
 
-  </div>
+  </main>
 
   <script src="assets/js/script.js"></script>
 </body>

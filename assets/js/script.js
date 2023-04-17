@@ -170,7 +170,7 @@ function showWeatherData(data) {
     iconImg.src = "http://openweathermap.org/img/wn/" + iconCurrent + "@4x.png";
     iconCurrentEl.appendChild(iconImg);
 
-    // day 1 temp high, temp low, humidity, windspeed
+    // day 1 
     var dayOneHumidityEl = document.getElementById('humidity-one');
     var dayOneWindspeedEl = document.getElementById('windspeed-one');
     var dayOneDayEl = document.getElementById('day-one');

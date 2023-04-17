@@ -38,7 +38,7 @@ function saveCity() {
 
 
 
-// event listener for cit input
+// event listener for city input
 var submitBtnEl = document.getElementById('submitBtn');
 submitBtnEl.addEventListener('click', function (event) {
   event.preventDefault();

@@ -22,15 +22,11 @@
 </head>
 
 <body>
-
   <section class="container">
-
-    <div class="current-info">
-
+    <article class="current-info">
       <div class="date-container">
         <div class="time" id="time"></div>
         <div class="date" id="date"></div>
-
         <div class="others" id="current-weather-items">
           <div class="weather-item">
             <div>Location</div>
@@ -54,10 +50,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </article>
 
-
-    <section class="searchbar">
+    <article class="searchbar">
       <div class="mb-3">
         <input type="text" id="input" class="form-control" placeholder="Search City Here">
       </div>
@@ -65,9 +60,9 @@
         <button id="submitBtn" class="btn btn-primary" type="button">Search</button>
       </div>
       <div id="viewed-cities"></div>
-    </section>
-
+    </article>
   </section>
+
   <main class="future-forecast">
     <section class="today" id="current-temp">
       <div id="icon-current"></div>
@@ -120,8 +115,6 @@
         <div id="windspeed-five">windspeed</div>
       </article>
     </section>
-
-
   </main>
 
   <script src="assets/js/script.js"></script>
